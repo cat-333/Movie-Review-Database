@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieDB - Your Movie Database</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <i class="fas fa-film"></i> MovieDB
+        </div>
+        <div class="nav-search">
+            <div class="search-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Search movies, genres...">
+            </div>
+            <button id="addMovieBtn" class="add-movie-btn">
+                <i class="fas fa-plus"></i> Add
+            </button>
+        </div>
+        <div class="filters">
+            <button id="watchlistBtn" class="watchlist-btn" title="View Watchlist">
+                <i class="fas fa-heart"></i> <span id="watchlistCount">0</span>
+            </button>
+            <select id="genreFilter">
+                <option value="">All Genres</option>
+            </select>
+            <select id="yearFilter">
+                <option value="">All Years</option>
+            </select>
+        </div>
+    </nav>
+
+    <main>
+        <div id="moviesGrid" class="movies-grid"></div>
+    </main>
+
+    <!-- Movie Details Modal -->
+    <div id="movieModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div class="modal-body">
+                <div class="modal-header">
+                    <div class="modal-poster">
+                        <img src="" alt="Movie Poster">
+                    </div>
+                    <div class="modal-info">
+                        <h2 class="movie-title"></h2>
+                        <div class="meta-info">
+                            <span class="year"></span>
+                            <span class="rating"></span>
+                            <span class="runtime"></span>
+                        </div>
+                        <div class="genres"></div>
+                        <p class="description"></p>
+                        <div class="production"></div>
+                        <div class="languages"></div>
+                        <div class="cast"></div>
+                    </div>
+                </div>
+                <div class="modal-reviews">
+                    <h3>Reviews</h3>
+                    <div class="reviews-container"></div>
+                    <div class="add-review">
+                        <h4>Add Your Review</h4>
+                        <form id="reviewForm">
+                            <div class="form-group">
+                                <label for="userName">Your Name</label>
+                                <input type="text" id="userName" name="userName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="userEmail">Your Email</label>
+                                <input type="email" id="userEmail" name="userEmail" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="rating">Rating (1-10)</label>
+                                <input type="number" id="rating" name="rating" min="1" max="10" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="reviewText">Your Review</label>
+                                <textarea id="reviewText" name="reviewText" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Submit Review</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="addMovieModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Add New Movie</h2>
+            <form id="addMovieForm">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="releaseDate">Release Date</label>
+                    <input type="date" id="releaseDate" name="releaseDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="productionCompany">Production Company</label>
+                    <input type="text" id="productionCompany" name="productionCompany" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="budget">Budget ($)</label>
+                    <input type="number" id="budget" name="budget" required>
+                </div>
+                <div class="form-group">
+                    <label for="boxOffice">Box Office ($)</label>
+                    <input type="number" id="boxOffice" name="boxOffice" required>
+                </div>
+                <div class="form-group">
+                    <label for="runtime">Runtime (minutes)</label>
+                    <input type="number" id="runtime" name="runtime" required>
+                </div>
+                <div class="form-group">
+                    <label for="genres">Genres (comma-separated)</label>
+                    <input type="text" id="genres" name="genres" placeholder="e.g., Action, Drama, Sci-Fi" required>
+                </div>
+                <div class="form-group">
+                    <label for="languages">Languages (comma-separated)</label>
+                    <input type="text" id="languages" name="languages" placeholder="e.g., English, French, Spanish"
+                        required>
+                </div>
+                <button type="submit" class="submit-btn">Add Movie</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p>&copy; 2024 MovieDB. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="toastContainer" class="toast-container"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>
