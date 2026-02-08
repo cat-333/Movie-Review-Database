@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Movie Database Management System
 
 A full-stack web application for managing and browsing movies, built with Node.js, Express, MySQL, and vanilla JavaScript.
@@ -110,3 +111,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - Movie data sourced from various public APIs
 - Icons from Font Awesome
 - Movie posters from Unsplash 
+=======
+# Movie-Review-Database
+A full-stack web application for managing and browsing movies, built with Node.js, Express, MySQL, and vanilla JavaScript.
+>>>>>>> 91471dac0028453ac58a11908fd939454f304a45
